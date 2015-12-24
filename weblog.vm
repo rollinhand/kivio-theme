@@ -1,0 +1,113 @@
+<!!DOCTYPE html>
+<html>
+<head>
+	<!-- Header information like meta information and script resources -->
+	#includeTemplate($model.weblog "standard_head")
+	<title>$model.weblog.name : $model.weblogPage.name</title>
+	#showAutodiscoveryLinks($model.weblog)
+	<link rel="stylesheet" href='$url.page("custom.css")' />
+    #showAnalyticsTrackingCode($model.weblog)
+    #showMetaDescription()
+</head>
+<body>
+	<!-- HTML 5 HEADER -->
+	<header id="header_wrapper">
+	#includeTemplate($model.weblog "standard_header")
+	</header>
+	
+	<!-- MAIN CONTENT -->
+	<!-- Section About -->
+	#if ($model.weblog.about)
+	<section id="about" class="top_cont_outer">
+		<div class="about_wrapper">
+		    <div class="container">
+		      <div class="about_section">
+		        <div class="row">
+		          <div class="col-lg-5 col-sm-7">
+		            <div class="top_left_cont"> 
+		              <h2>$model.weblog.tagline</h2>
+		              <p>$model.weblog.about</p>
+		              <!-- <a href="#service" class="read_more2">Read more</a> -->
+		            </div>
+		          </div>
+		          <div>
+					<img src="$url.resource('images/teaser.png')" class="bannerImg" alt="Teaser" />
+				  </div>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+	</section>
+	#end
+	<!-- / Section About -->
+	
+	<!-- Section Posts -->
+	<section id="posts">
+		<div class="posts_wrapper">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						#set($pager = $model.getWeblogEntriesPager())
+						#showWeblogEntriesPager($pager)
+						#if ($model.permalink)
+							#showWeblogEntryComments($entry)
+							#showWeblogEntryCommentForm($entry)
+						#end
+						<ul class="pager">
+			        		#if($utils.isNotEmpty($pager.prevLink))<li class="previous"><a href="$pager.prevLink">$pager.prevName</a></li>
+							#end
+						    #if($utils.isNotEmpty($pager.nextLink))<li class="next"><a href="$pager.nextLink">$pager.nextName</a></li>
+						    #end
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<!-- Section Recent -->
+	<section id="recent">
+		<div class="container">
+			<div class="recent_wrapper">
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="recent_block">
+							<h3>Recent</h3>
+							#set( $myrecent = $model.weblog.getRecentWeblogEntries(nil, 5) )
+							<ul>
+							#foreach ($entry in $myrecent)
+								<li><a href="$url.entry($entry.anchor)">$entry.title</a></li>
+							#end
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-4 borderLeft borderRight">
+						<div class="recent_block">
+							<h3><span><i class="fa fa-calendar"></i></span> Calendar</h3>
+							<div class="calendar">#showWeblogEntryCalendar($model.weblog "nil")</div>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="recent_block">
+							<h3>Hottest Tags</h3>
+							#set($mytags = $model.weblog.getPopularTags(-1, 30))
+		                    #if ($mytags && $mytags.size() > 2)
+		                       <div id="tagcloud">
+		                       #foreach ($tag in $mytags)
+		                          <a class="tag s${tag.intensity}" href="$url.tag($tag.name)" title="$tag.count">$tag.name</a>
+		                       #end
+		                       </div>
+		                    #end
+						</div>
+					</div>
+				</div>
+			</div>			
+		</div>
+	</section>
+	
+	<!-- HTML5 FOOTER -->
+	<footer id="footer_wrapper">
+	#includeTemplate($model.weblog "standard_footer")
+	</footer>
+</body>
+</html>

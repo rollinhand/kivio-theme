@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="footer_bottom">
+    	<span>Copyright &copy; 2015, Kivio Theme based on Unique Template by <a href="http://webthemez.com">WebThemez.com</a>.</span>
+    	<div class="subscribe">
+    		<a href="$url.feed.entries.atom">Subscribe to this blog.</a>
+    	</div>
+    </div>
+</div>
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="$url.resource('js/jquery.js')"></script>
+<script src="$url.resource('js/bootstrap.min.js')"></script>

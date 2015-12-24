@@ -1,0 +1,19 @@
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, maximum-scale=1">
+
+<link rel="icon" href="favicon.png" type="image/png">
+
+<!-- Bootstrap Libraries -->
+<link href="$url.resource('css/bootstrap.min.css')" rel="stylesheet" type="text/css">
+<link href="$url.resource('css/style.css')" rel="stylesheet" type="text/css"> 
+<link href="$url.resource('css/font-awesome.min.css')" rel="stylesheet" type="text/css"> 
+<link href="$url.resource('css/animate.css')" rel="stylesheet" type="text/css">
+ 
+<!--[if lt IE 9]>
+    <script src="$url.resource('js/respond-1.1.0.min.js')"></script>
+    <script src="$url.resource('js/html5shiv.js')"></script>
+    <script src="$url.resource('js/html5element.js')"></script>
+<![endif]-->
+
+
+

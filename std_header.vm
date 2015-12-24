@@ -1,0 +1,44 @@
+<div class="container">
+	<div class="header_box">
+	  <div class="logo"><a href="$url.home"><img src="$url.resource('icons/kivio-white.png')" alt="logo"></a></div>
+	  	<nav class="navbar navbar-inverse" role="navigation">
+	  	  <!-- Nur auf kleinen Bildschirmen zu sehen -->
+		  <div class="navbar-header">
+		    <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav"> 
+		    	<span class="sr-only">Toggle navigation</span> 
+		    	<span class="icon-bar"></span> 
+		    	<span class="icon-bar"></span> 
+		    	<span class="icon-bar"></span>
+		    </button>
+		  </div>
+		  
+		  <div id="main-nav" class="collapse navbar-collapse navStyle">
+				<ul class="nav navbar-nav" id="mainNav">
+				  <li class="active"><a href="$url.home" class="scroll-link">Home</a></li>
+				  <!--<li><a href="#aboutUs" class="scroll-link">About Us</a></li>
+				  <li><a href="#contact" class="scroll-link">Contact</a></li>-->
+				  #if ($utils.isUserAuthorizedToAuthor($weblog))
+				  	<li class="dropdown">
+				  		<a href="#" class="dropdown-toggle" data-toggle="dropdown">$utils.getAuthenticatedUser().userName <span class="caret"></span></a>
+				  		<ul class="dropdown-menu">
+				  			<li><a href="$url.createEntry">$text.get("navigationBar.newEntry")</a></li>
+				    		#if($utils.isUserAuthorizedToAdmin($weblog))
+				       			<li><a href="$url.editSettings">$text.get("navigationBar.settings")</a></li>
+				    		#end
+				    		#if ($utils.isUserAuthenticated())
+				    			<li class="divider"></li>
+						        <li><a href="$url.logout">$text.get("navigationBar.logout")</a></li>
+						    #else
+						        <li><a href="$url.login">$text.get("navigationBar.login")</a></li>
+						    #end
+				  		</ul>
+				  	</li>
+				  #else
+				  	<li><a href="$url.login">$text.get("navigationBar.login")</a></li>
+				  #end
+				</ul><!-- /mainNav -->
+		  </div>
+	 	</nav>
+	</div>
+</div>
+</div>

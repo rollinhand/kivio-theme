@@ -1,0 +1,70 @@
+<!!DOCTYPE html>
+<html>
+<head>
+	<!-- Header information like meta information and script resources -->
+	#includeTemplate($model.weblog "standard_head")
+	<title>$model.weblog.name : $model.weblogEntry.title</title>
+	#showAutodiscoveryLinks($model.weblog)
+	<link rel="stylesheet" href='$url.page("custom.css")' />
+    #showAnalyticsTrackingCode($model.weblog)
+    #showMetaDescription()
+</head>
+<body>
+	<!-- HTML 5 HEADER -->
+	<header id="header_wrapper">
+	#includeTemplate($model.weblog "standard_header")
+	</header>
+	
+	#set($entry = $model.weblogEntry)
+	<!-- MAIN CONTENT -->
+	<section id="post_header">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<h2>$entry.title</h2>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<!-- Section Posts -->
+	<section id="posts">
+		<div class="posts_wrapper">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-9 borderRight">
+						#set($pager = $model.getWeblogEntriesPager())
+						#showWeblogEntriesPager($pager)
+						#if ($model.permalink)
+							#showWeblogEntryComments($entry)
+							#showWeblogEntryCommentForm($entry)
+						#end
+						<ul class="pager">
+			        		#if($utils.isNotEmpty($pager.prevLink))<li class="previous"><a href="$pager.prevLink">$pager.prevName</a></li>
+							#end
+						    #if($utils.isNotEmpty($pager.nextLink))<li class="next"><a href="$pager.nextLink">$pager.nextName</a></li>
+						    #end
+						</ul>
+					</div>
+					<div class="col-lg-3">
+						<div class="meta_block">
+							<ul>
+								<li><i class="icon-calendar"></i> $utils.formatDate($entry.pubTime, "MMM dd, yyyy")</li>
+								<li><i class="icon-time"></i> $utils.formatDate($entry.pubTime, "hh:mma")</li>
+								<li><i class="icon-user"></i> $entry.creator.screenName</li>
+								<li><i class="icon-star"></i> $entry.category.name</li>
+								<li>$entry.locale</li>
+							</ul>
+						</div>
+					</div>
+				</div> <!-- / row -->
+			</div>
+		</div>
+	</section>
+	
+	<!-- HTML5 FOOTER -->
+	<footer id="footer_wrapper">
+	#includeTemplate($model.weblog "standard_footer")
+	</footer>
+</body>
+</html>
