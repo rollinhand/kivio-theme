@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <div>
-                    <img src="http://localhost:8080/roller/kivio/mediaresource/a2bccb64-48d7-464a-8484-7f5dba0acda9" class="bannerImg2">
+                    <img src='$url.resource("images/sorry.png")' class="bannerImg2">
                 </div>
 			</div>
 		</div>
