@@ -1,0 +1,83 @@
+<!!DOCTYPE html>
+<html>
+<head>
+	<!-- Header information like meta information and script resources -->
+	#includeTemplate($model.weblog "standard_head")
+	<title>$model.weblog.name : $model.weblogPage.name</title>
+	#showAutodiscoveryLinks($model.weblog)
+	<link rel="stylesheet" href='$url.page("custom.css")' />
+    #showAnalyticsTrackingCode($model.weblog)
+    #showMetaDescription()
+</head>
+<body>
+	<!-- HTML 5 HEADER -->
+	<header id="header_wrapper">
+	#includeTemplate($model.weblog "standard_header")
+	</header>
+	
+	<!-- MAIN CONTENT -->
+	<section id="post_header">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5 col-sm-7">
+					<div class="top_left_cont">
+						<h2>Unternehmenstätigkeit eingestellt</h2>
+						<p>Mit Ablauf des 3. Quartals 2015 hat Berg Systeme alle unternehmerischen 
+						   Tätigkeiten eingestellt. Die von mir betreuten Projekte finden Sie als 
+						   Sourcecode bei GitHub. Alle Projekte werden zukünftig unter kivio.org subsumiert.</p>
+						<a href="https://github.com/rollinhand" class="read_more2">GitHub</a>  
+                    </div>
+                </div>
+                <div>
+                    <img src="http://localhost:8080/roller/kivio/mediaresource/a2bccb64-48d7-464a-8484-7f5dba0acda9" class="bannerImg2">
+                </div>
+			</div>
+		</div>
+	</section>
+	
+	<!-- Section Projekte -->
+	<section id="projects">
+		<div class="posts_wrapper">
+			<div class="container">
+				<h2>Projekte</h2>
+				<div class="row">
+					<div class="col-lg-4 borderRight">
+						<div class="project_block">
+                        	<div class="project_icon icon2"><span><i class="icon-windows"></i></span></div>
+                        	<h3>WIX Toolset Plugin</h3>
+                        	<p>Mit dem WIX Toolset ist es möglich, MSI-Pakete für den Microsoft Windows Installer 
+                        	zu bauen. Das Plugin für Jenkins ermöglicht die Integration des Bauens in einen Buildserver, 
+                        	um den Prozess der kontinuierlichen Integration bis hin zum Setup zu ermöglichen. 
+                        	Für das Ausführen des Plugins in Jenkins oder Hudson ist eine Windows-Instanz notwendig.</p>
+                        	<a href="https://github.com/rollinhand" class="read_more">GitHub</a>
+                        </div>
+					</div>
+					<div class="col-lg-4 borderRight">
+						<div class="project_block">
+							<div class="project_icon icon2"><span><i class="icon-wrench"></i></span></div>
+                        	<h3>dBASE Converter</h3>
+                        	<p>Das Tool "dbf" ist ein einfach zu benutzendes Kommandozeilenprogramm zum Anzeigen und 
+                        	Konvertieren von dBASE III, IV und 5.0 Datenbanken. Der Inhalt der dBASE-Datenbanken lässt 
+                        	sich am Bildschirm anzeigen oder in komma-separierte Dateien (CSV-Dateien) konvertieren, 
+                        	die in Microsoft Excel oder OpenOffice Calc geöffnet werden können.</p>
+                        	<a href="https://github.com/rollinhand" class="read_more">GitHub</a>
+						</div>
+					</div>
+                    <div class="col-lg-4">
+                    	<div class="project_block">
+                    	<div class="project_icon icon2"><span><i class="icon-github"></i></span></div>
+						<h3>Weitere Projekte</h3>
+						<p>Neuere Projekte können direkt bei GitHub eingesehen werden.</p>
+                    	</div>
+					</div>
+				</div> <!-- / row -->
+			</div>
+		</div>
+	</section>
+	
+	<!-- HTML5 FOOTER -->
+	<footer id="footer_wrapper">
+	#includeTemplate($model.weblog "standard_footer")
+	</footer>
+</body>
+</html>

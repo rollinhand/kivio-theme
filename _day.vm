@@ -1,0 +1,52 @@
+#if(!$model.permalink)
+<div class="daybox">
+#end
+
+    #foreach( $entry in $entries )
+		<div class="entryBox">
+			<a name="$utils.encode($entry.anchor)" id="$utils.encode($entry.anchor)"></a>
+
+		    #if(!$model.permalink)	<!-- Ansonsten wird der Titel in entry.vm angezeigt -->
+		    <h2 class="entryTitle"><a href="$entry.permalink">$entry.title</a></h2>
+
+			<!-- Author, Date and Comments -->
+			<div class="entryInfo">
+		    <ul class="infoList">
+		    	<li><i class="icon-time"></i> $utils.formatDate($entry.pubTime, "dd.MM.yyyy HH:mm")</li>
+		    	<li><i class="icon-user"></i> $entry.creator.screenName</li> 
+				#set($commentCount = $entry.commentCount)
+				#if($entry.commentsStillAllowed || $commentCount > 0)
+					#set($link = "$url.comments($entry.anchor)" )
+					<li><a href="$link" class="comment"><i class="icon-comment"></i> $commentCount</a></li>
+				#else        
+					<li><i class="icon-comment"></i> <span class="comment">$commentCount</comment></li>
+				#end
+				#if ($utils.isUserAuthorizedToAuthor($entry.website))
+					<li><a href="$url.editEntry($entry.anchor)"><i class="icon-edit"></i></a></li>
+				#end
+		    </p>
+		    </div>
+		    <!-- / Author, Date and Comments -->
+		    #end
+			   
+		    <div class="entryContent">
+		        #if($model.permalink)
+		        	<!-- This is shown if a single entry is shown -->
+		        	#if($utils.isNotEmpty($entry.summary))
+		        		<p class="summary">$entry.summary</p>
+		        	#end	
+		            <p class="content">$entry.displayContent</p>
+		        #else
+		            #if($utils.isNotEmpty($entry.summary))
+		                <p>$entry.summary</p>
+                    #else
+                        <p>$entry.displayContent</p>
+                    #end
+		        #end
+		    </div>
+		</div>
+    #end
+
+#if(!$model.permalink)
+</div>
+#end

@@ -1,6 +1,7 @@
 @charset "utf-8";
 @import url(http://fonts.googleapis.com/css?family=Raleway:800,700,400);
 @import url(http://fonts.googleapis.com/css?family=Signika:400,600);
+@import url(https://fonts.googleapis.com/css?family=Muli:300,400);
 
 /* Reset
 ---------------------------------*/
@@ -19,6 +20,15 @@ img {
 a, a:hover, a:active {
     outline: 0px !important;
 }
+
+p {
+	text-align:justify;
+	font-family: 'Muli', sans-serif;
+    font-size: 12pt;
+    font-weight: normal;
+    line-height:1.5em;
+}
+
 .clear {
     clear: both;
     display: block;
@@ -45,8 +55,8 @@ a, a:hover, a:active {
 /* MAIN STYLE */
 body {
     background: #fff;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
+    font-family: 'Muli', sans-serif;
+    font-size: 12pt;
     font-weight: normal;
     color: #888888;
     margin: 0;
@@ -70,22 +80,37 @@ body {
 	z-index: 2;
 }
 
+h2 {
+	font-size: 38px;
+	color: #222222;
+	font-family: 'Raleway', sans-serif;
+	font-weight: normal;
+	margin: 0px 0 25px 0;
+	text-align: center;
+}
+
 /* Search Form
 ---------------------------------*/
+.search-box {
+	position: relative;
+	width: 100%;
+	margin: 0;
+}
+
 #searchForm {
   margin: 0 15px;
   position: relative;
   float: right;
+  
 }
 #searchForm #search-btn {
   color: #428bca;
   font-size: 15px;
   font-weight: 600;
   position: absolute;
-  left: 168px;
-  top: 9px;
+  right: 0px;
+  top: 12px;
   background: transparent;
-  transition: color 0.25s linear;
 }
 #searchForm #search-btn:hover,
 #searchForm #search-btn:focus {
@@ -93,18 +118,10 @@ body {
   outline: none;
 }
 #searchForm .form-control {
-  background: #646464;
-  width: 210px;
-  border: 1px solid #363636;
+  width: 250px;
   color: #000000;
   position: relative;
   top: 12px;
-  border-top-right-radius: 100px;
-  border-top-left-radius: 100px;
-  border-bottom-right-radius: 100px;
-  border-bottom-left-radius: 100px;
-  box-sizing: border-box;
-  -webkit-transition: all .3s linear; -moz-transition: all .3s linear; transition: all .3s linear;
 }
 #searchForm .form-control:focus {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(229, 65, 45, 0.5);
@@ -153,7 +170,7 @@ body {
 }
 
 .navStyle ul li:last-child {
-    margin: 0 0 0 23px;
+    margin: 0 0 0 0px;
 }
 
 .navStyle ul li a {
@@ -275,6 +292,14 @@ body {
     right: 0px;
 	float: right;
 }
+
+.bannerImg2 {
+	padding-top: 5%;
+	margin-right: 30px;
+	margin-left: 25%;
+	position: absolute;
+}
+
 a.read_more2 {
     font-family: 'Raleway', sans-serif;
     display: block;
@@ -298,6 +323,79 @@ a.read_more2:hover {
     background: #fff;
     color: #005490;
     border: 1px solid #fff;
+}
+
+a.read_more {
+    /*background: #fff;*/
+    text-transform: uppercase;
+    display: block;
+    width: 176px;
+    height: 49px;
+    text-align: center;
+    line-height: 49px;
+    font-size: 16px;
+    color: #005490;
+    border-radius: 3px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    border: 2px solid #005490;
+    transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+}
+
+a.read_more:hover {
+    background: #005490;
+    color: #fff;
+}
+
+/* Projects
+---------------------------------*/
+
+#projects {
+    padding: 60px 0px;
+    background: #EFEFEF;
+}
+
+.project_block {
+    text-align: justify;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.project_icon {
+    border: 2px solid #005490;
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    margin: 0px auto 25px;
+}
+
+.project_icon span {
+    background: transparent;
+    border-radius: 50%;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.project_icon i {
+    color: #005490;
+    font-size: 40px;
+    margin-top: 0;
+    position: relative;
+    left: 25px;
+    top: 20px;
+    z-index: 20;
+}
+
+.project_block h3 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #111111;
+    margin: 35px 0 18px;
+    text-align: center;
 }
 
 /* Recent
@@ -394,12 +492,17 @@ a.read_more2:hover {
     margin: 0.5em 0 0.5em 0;
     font-size: 110%;
     margin-right: 30px;
+    color:#111;
+    line-height:150%;
 }
 
 .entryContent p {
-	line-height: 1.5em;
 	padding-bottom: 15px;
 	text-align: justify;
+}
+
+.entryContent .summary {
+	font-weight:bold;
 }
 
 .entryInfo {
@@ -407,17 +510,42 @@ a.read_more2:hover {
 	padding-bottom: 5px;
 }
 
+ul.infoList {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	display: block;
+}
+
+.detail {
+	color: #999;
+}
+
+ul.infoList li {
+	list-style-type: none;
+	display: inline;
+	font-size: 0.8em;
+}
+
+ul.infoList li + li {
+	padding-left: 10px;
+}
+
 .entryInfo a:hover,
 .entryTitle a:hover {
 	text-decoration: none;
 }
 
-hr.separator {
-	border: 0;
-    height: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    margin: 30px 0 30px 0;
+#posts h2 {
+	font-size: 1.5em;
+	font-weight: bold;
+	text-align:left;
+	line-height:1.0em;
+	margin-bottom:5px;
+}
+
+.entryBox {
+	margin-bottom:50px;
 }
 
 /* Einzelnes Posting
@@ -466,7 +594,6 @@ hr.separator {
 }
 
 .footer_bottom span {
-    display: block;
     font-size: 14px;
     color: #cccccc;
     text-align: center;
@@ -486,13 +613,19 @@ hr.separator {
 }
 
 .footer_bottom .subscribe {
-	text-align: center;
+	color:#005490;
 }
 
 .footer_bottom .subscribe a:before {
 	content: "\f09e";
     font-family: FontAwesome;
     padding-right:0.5em;
+}
+
+.admin {
+	position: relative;
+	float: right;
+	margin: 0;
 }
 
 /* Media Queries

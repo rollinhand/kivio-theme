@@ -11,31 +11,22 @@
 		    	<span class="icon-bar"></span>
 		    </button>
 		  </div>
-		  
+		  #set($cats = $model.weblog.getWeblogCategories())
 		  <div id="main-nav" class="collapse navbar-collapse navStyle">
 				<ul class="nav navbar-nav" id="mainNav">
-				  <li class="active"><a href="$url.home" class="scroll-link">Home</a></li>
-				  <!--<li><a href="#aboutUs" class="scroll-link">About Us</a></li>
-				  <li><a href="#contact" class="scroll-link">Contact</a></li>-->
-				  #if ($utils.isUserAuthorizedToAuthor($weblog))
-				  	<li class="dropdown">
-				  		<a href="#" class="dropdown-toggle" data-toggle="dropdown">$utils.getAuthenticatedUser().userName <span class="caret"></span></a>
-				  		<ul class="dropdown-menu">
-				  			<li><a href="$url.createEntry">$text.get("navigationBar.newEntry")</a></li>
-				    		#if($utils.isUserAuthorizedToAdmin($weblog))
-				       			<li><a href="$url.editSettings">$text.get("navigationBar.settings")</a></li>
-				    		#end
-				    		#if ($utils.isUserAuthenticated())
-				    			<li class="divider"></li>
-						        <li><a href="$url.logout">$text.get("navigationBar.logout")</a></li>
-						    #else
-						        <li><a href="$url.login">$text.get("navigationBar.login")</a></li>
-						    #end
-				  		</ul>
-				  	</li>
-				  #else
-				  	<li><a href="$url.login">$text.get("navigationBar.login")</a></li>
-				  #end
+					<!-- Home -->
+					#if ($model.weblogCategory || $model.permalink)
+						<li><a href="$url.home"><i class="icon-home" style="font-size:1.25em"></i></a></li>
+					#else
+						<li class="active"><a class="scroll-link" href="$url.home"><i class="icon-home" style="font-size:1.25em"></i></a></li>
+					#end
+					#foreach($cat in $cats)
+						#if ($model.weblogCategory && $model.weblogCategory.name == $cat.name || ($model.permalink && $model.weblogEntry.category.name == $cat.name))
+							<li class="active"><a class="scroll-link" href="$url.category($cat.name)">$cat.name</a></li>
+						#else
+							<li><a class="scroll-link" href="$url.category($cat.name)">$cat.name</a></li>
+						#end
+					#end
 				</ul><!-- /mainNav -->
 		  </div>
 	 	</nav>

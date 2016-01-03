@@ -3,7 +3,7 @@
 <head>
 	<!-- Header information like meta information and script resources -->
 	#includeTemplate($model.weblog "standard_head")
-	<title>$model.weblog.name : $model.weblogEntry.title</title>
+	<title>$model.weblog.name : $model.weblogPage.title</title>
 	#showAutodiscoveryLinks($model.weblog)
 	<link rel="stylesheet" href='$url.page("custom.css")' />
     #showAnalyticsTrackingCode($model.weblog)
@@ -15,25 +15,24 @@
 	#includeTemplate($model.weblog "standard_header")
 	</header>
 	
-	#set($entry = $model.weblogEntry)
+	#set($page = $model.weblogPage)
+	<!-- MAIN CONTENT -->
+	<section id="post_header">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<h2>$page.title</h2>
+				</div>
+			</div>
+		</div>
+	</section>
+	
 	<!-- Section Posts -->
 	<section id="posts">
 		<div class="posts_wrapper">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-8">
-						<h2>$entry.title</h2>
-						<div class="entryInfo detail">
-							<ul class="infoList">
-								<li><i class="icon-time"></i> $utils.formatDate($entry.pubTime, "dd.MM.yyyy HH:mm")</li>
-								<li><i class="icon-user"></i> $entry.creator.screenName</li>
-								<li><i class="icon-star"></i> $entry.category.name</li>
-								<li><i class="icon-flag"></i> $entry.locale</li>
-								#if ($utils.isUserAuthorizedToAuthor($entry.website))
-									<li><a href="$url.editEntry($entry.anchor)"><i class="icon-edit"></i></a></li>
-								#end
-							</ul>
-						</div>
+					<div class="col-lg-9 borderRight">
 						#set($pager = $model.getWeblogEntriesPager())
 						#showWeblogEntriesPager($pager)
 						#if ($model.permalink)
@@ -47,8 +46,16 @@
 						    #end
 						</ul>
 					</div>
-					<div class="col-lg-4">
-						#includeTemplate($model.weblog "sidebar")
+					<div class="col-lg-3">
+						<div class="meta_block">
+							<ul>
+								<li><i class="icon-calendar"></i> $utils.formatDate($entry.pubTime, "MMM dd, yyyy")</li>
+								<li><i class="icon-time"></i> $utils.formatDate($entry.pubTime, "hh:mma")</li>
+								<li><i class="icon-user"></i> $entry.creator.screenName</li>
+								<li><i class="icon-star"></i> $entry.category.name</li>
+								<li>$entry.locale</li>
+							</ul>
+						</div>
 					</div>
 				</div> <!-- / row -->
 			</div>

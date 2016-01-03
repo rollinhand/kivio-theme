@@ -5,7 +5,7 @@
     
     <id>kivio</id>
     <name>Kivio</name>
-    <description>-</description>
+    <description>Kivio theme based on Unique theme from WebThemez</description>
     <author>Björn Berg</author>
 
     <!-- theme preview image -->
@@ -58,20 +58,8 @@
             <contentsFile>tags_index.vm</contentsFile>
             <templateLanguage>velocity</templateLanguage>
         </rendition>
-    </template>
-
-    <template action="search">
-        <name>Search</name>
-        <description>Search results page</description>
-        <navbar>false</navbar>
-        <hidden>true</hidden>
-        <contentType>text/html</contentType>
-        <rendition>
-            <contentsFile>search.vm</contentsFile>
-            <templateLanguage>velocity</templateLanguage>
-        </rendition>
-    </template>-->
-
+    </template> -->
+    
     <template action="custom">
         <name>_day</name>
         <description>One day's worth of entries</description>
@@ -80,7 +68,7 @@
         <contentType>text/html</contentType>
         <rendition>
             <templateLanguage>velocity</templateLanguage>
-            <contentsFile>day.vm</contentsFile>
+            <contentsFile>_day.vm</contentsFile>
         </rendition>
     </template>
 
@@ -120,6 +108,18 @@
             <templateLanguage>velocity</templateLanguage>
         </rendition>
     </template>
+    
+    <template action="custom">
+        <name>sidebar</name>
+        <description>sidebar</description>
+        <navbar>false</navbar>
+        <hidden>true</hidden>
+        <contentType>text/html</contentType>
+        <rendition>
+            <contentsFile>sidebar.vm</contentsFile>
+            <templateLanguage>velocity</templateLanguage>
+        </rendition>
+    </template>
 
     <template action="custom">
         <name>standard_footer</name>
@@ -129,6 +129,33 @@
         <contentType>text/html</contentType>
         <rendition>
             <contentsFile>std_footer.vm</contentsFile>
+            <templateLanguage>velocity</templateLanguage>
+        </rendition>
+    </template>
+    
+    <!-- // my own templates with content -->
+    <template action="custom">
+        <name>Berg Systeme (de)</name>
+        <description>Closed Berg Systeme</description>
+        <link>de/bergsysteme</link>
+        <navbar>false</navbar>
+        <hidden>false</hidden>
+        <contentType>text/html</contentType>
+        <rendition>
+            <contentsFile>bergsysteme_de.vm</contentsFile>
+            <templateLanguage>velocity</templateLanguage>
+        </rendition>
+    </template>
+    
+    <template action="custom">
+        <name>imprint</name>
+        <description>Imprint in english</description>
+        <link>imprint</link>
+        <navbar>true</navbar>
+        <hidden>false</hidden>
+        <contentType>text/html</contentType>
+        <rendition>
+            <contentsFile>imprint.vm</contentsFile>
             <templateLanguage>velocity</templateLanguage>
         </rendition>
     </template>
@@ -153,6 +180,7 @@
     
     <resource path="icons/kivio-white.png" />
     <resource path="images/teaser.png" />
+    <resource path="images/theme-gaurav.png" />
 
     <!-- <resource path="icons/asf-logo.png" />
     <resource path="icons/comment.gif" />
