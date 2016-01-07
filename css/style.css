@@ -501,6 +501,10 @@ a.read_more:hover {
 	text-align: justify;
 }
 
+.entryContent ul {
+	list-style-type: square;
+}
+
 .entryContent .summary {
 	font-weight:bold;
 }
