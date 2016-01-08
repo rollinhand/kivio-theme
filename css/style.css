@@ -490,7 +490,6 @@ a.read_more:hover {
 
 .entryContent {
     margin: 0.5em 0 0.5em 0;
-    font-size: 110%;
     margin-right: 30px;
     color:#111;
     line-height:150%;
@@ -499,7 +498,6 @@ a.read_more:hover {
 .entryContent p {
 	padding-bottom: 15px;
 	text-align: justify;
-	font-size: 110%;
 }
 
 .entryContent ul {

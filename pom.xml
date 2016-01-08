@@ -8,38 +8,116 @@
 	<version>0.9</version>
 	<packaging>pom</packaging>
 	<properties>
-		<theme.destination>/opt/roller/themes/kivio</theme.destination>
+		<theme.destination>/opt/roller/themes</theme.destination>
+		<machine.destination>../kivio-machine/themes</machine.destination>
 	</properties>
-	
 	<build>
+		<sourceDirectory>.</sourceDirectory>
 		<plugins>
 			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.8</version>
 				<executions>
 					<execution>
 						<id>copy-sources</id>
 						<phase>generate-sources</phase>
 						<configuration>
-							<tasks>
-								<mkdir dir="${theme.destination}" />
-								<copy todir="${theme.destination}">
+							<target>
+								<mkdir dir="${machine.destination}/kivio-theme" />
+								<copy todir="${machine.destination}/kivio-theme">
 									<fileset dir="${basedir}">
 										<exclude name="**/pom.xml"/>
+										<exclude name="**/zip.xml" />
 										<exclude name="**/*.md"/>
+										<exclude name="target" />
 										<exclude name=".git"/>
 										<exclude name=".project"/>
+										<exclude name="*.properties" />
 									</fileset>
 								</copy>
-							</tasks>
+							</target>
 						</configuration>
 						<goals>
 							<goal>run</goal>
 						</goals>
 					</execution>
+					<execution>
+						<id>upload</id>
+						<phase>install</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<target>
+								<property file="config.properties" />
+								
+								<scp todir="${ssh.user}:${ssh.pwd}@${ssh.host}:${theme.destination}" trust="true" failOnError="true">
+    								<fileset dir="${basedir}/target">
+    									<include name="*.zip" />
+    								</fileset>
+  								</scp>
+  								
+  								<sshexec host="${ssh.host}" username="${ssh.user}"
+									password="${ssh.pwd}" command="unzip -o ${theme.destination}/${artifactId}-${version}-release.zip -d ${theme.destination}/${artifactId}" 
+									verbose="false" trust="true" failOnError="true" />
+  								
+  								<sshexec host="${ssh.host}" username="${ssh.user}"
+									password="${ssh.pwd}" command="/etc/init.d/glassfish restart" 
+									verbose="false" trust="true" failOnError="true" />
+									
+								<taskdef name="sshexec"
+									classname="org.apache.tools.ant.taskdefs.optional.ssh.SSHExec"
+									classpathref="maven.plugin.classpath" />	
+							</target>
+						</configuration>	
+					</execution>
 				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.ant</groupId>
+						<artifactId>ant-jsch</artifactId>
+						<version>1.9.6</version>
+					</dependency>
+					<dependency>
+						<groupId>com.jcraft</groupId>
+						<artifactId>jsch</artifactId>
+						<version>0.1.53</version>
+					</dependency>
+				</dependencies>
 			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+        		<version>2.6</version>
+        		<configuration>
+		          <descriptors>
+      				<descriptor>zip.xml</descriptor>
+    			  </descriptors>
+		        </configuration>
+        		<executions>
+        			<execution>
+        				<id>zip</id>
+        				<phase>package</phase>
+        				<goals>
+        					<goal>single</goal>
+        				</goals>
+        			</execution>
+        		</executions>
+        	</plugin>
 		</plugins>
 	</build>
 	<name>Kivio Theme for Apache Roller</name>
 	<url>https://github.com/rollinhand/kivio-theme</url>
+	<scm>
+		<url>scm:git:git@github.com:rollinhand/kivio-theme</url>
+		<connection>scm:git:git@github.com:rollinhand/kivio-theme</connection>
+		<developerConnection>scm:git:git@github.com:rollinhand/kivio-theme</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+	<developers>
+		<developer>
+			<id>rollinhand</id>
+			<name>Björn Berg</name>
+			<email>rollin.hand@gmx.de</email>
+		</developer>
+	</developers>
 </project>
