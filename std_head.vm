@@ -6,7 +6,8 @@
 
 <!-- Bootstrap Libraries -->
 <link href="$url.resource('css/bootstrap.min.css')" rel="stylesheet" type="text/css">
-<link href="$url.resource('css/style.css')" rel="stylesheet" type="text/css"> 
+<link href="$url.resource('css/style.css')" rel="stylesheet" type="text/css">
+<link href="$url.resource('css/github.css')" rel="stylesheet" type="text/css">
 <link href="$url.resource('css/font-awesome.min.css')" rel="stylesheet" type="text/css"> 
 <link href="$url.resource('css/animate.css')" rel="stylesheet" type="text/css">
  

@@ -27,6 +27,11 @@ p {
     font-size: 12pt;
     font-weight: normal;
     line-height:1.5em;
+	-moz-hyphens: auto;
+	-o-hyphens: auto;
+	-webkit-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto; 
 }
 
 .clear {
@@ -109,7 +114,7 @@ h2 {
   font-weight: 600;
   position: absolute;
   right: 0px;
-  top: 12px;
+  top: 0px;
   background: transparent;
 }
 #searchForm #search-btn:hover,
@@ -118,10 +123,11 @@ h2 {
   outline: none;
 }
 #searchForm .form-control {
-  width: 250px;
+  width: 340px;
   color: #000000;
   position: relative;
-  top: 12px;
+  top: 0px;
+  margin-bottom: 10px;
 }
 #searchForm .form-control:focus {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(229, 65, 45, 0.5);
@@ -347,6 +353,14 @@ a.read_more {
 a.read_more:hover {
     background: #005490;
     color: #fff;
+}
+
+.about {
+	margin:10px 0px;
+}
+
+.about p {
+	font-size:0.9em;
 }
 
 /* Projects
@@ -629,6 +643,50 @@ ul.infoList li + li {
 	position: relative;
 	float: right;
 	margin: 0;
+}
+
+/* Github extension
+---------------------------------*/
+.github-box {
+	display: block;
+	clear: both;
+	margin: 5px 5px;
+	padding-top: 10px;
+}
+
+.github-box .gh-repository-list {
+	border: 1px solid #999;
+	display: block;
+}
+
+.github-box .gh-realname {
+	font-size: 1.0em;
+	padding: 1px 1px;
+}
+
+.github-box h3 {
+	font-size: 1.15em;
+	margin-top:20px;
+	padding-top:20px;
+}
+
+.github-box .gh-text {
+	font-size: 0.8em;
+	margin: 0px 5px;
+	padding: 5px 5px;
+}
+
+.github-box .gh-repository-name {
+	font-weight:bold;
+}
+
+.gh-odd {
+	background-color:#EEE;
+}
+
+.gh-version {
+	font-size: 9px;
+	font-style: italic;
 }
 
 /* Media Queries

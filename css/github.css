@@ -1,0 +1,59 @@
+.gh-profile {
+	display: block;
+}
+
+.gh-text {
+	display: block;
+	margin: 5px 5px;
+	padding: 2px 2px;
+}
+
+/*
+	Class definition for profile
+*/
+.gh-realname {
+	font-size: 1.25em;
+	font-weight: bold;
+}
+
+.gh-username {
+	font-size: 1.0em;
+	color: #999;
+}
+
+.gh-avatar {
+	float: left;
+	margin: 2px 6px;
+}
+
+.gh-avatar .gh-avatarImg {
+	height: 48px;
+	width: 48px;
+}
+
+/* 
+	Class definitions for repository listing
+*/
+.gh-repository-list, .gh-activity-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.gh-repository-name {
+	font-size: 1.25em;
+	font-weight: bold;
+	display: block;
+}
+
+.gh-repository-description {
+	color:#999;
+}
+
+.gh-repository-name a {
+	text-decoration:none;
+}
+
+/*
+	Class definitions for activities
+*/
