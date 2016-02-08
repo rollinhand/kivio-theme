@@ -1,7 +1,8 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, maximum-scale=1">
 
-<link rel="icon" href="favicon.png" type="image/png">
+<link rel="icon" href="$url.resource('icons/favicon.png')" type="image/png">
+<link rel="shortcut icon" href="$url.resource('icons/favicon.png')" type="image/x-icon">
 
 <!-- Bootstrap Libraries -->
 <link href="$url.resource('css/bootstrap.min.css')" rel="stylesheet" type="text/css">

@@ -163,6 +163,7 @@
     <resource path="css/font-awesome.min.css" />
     <resource path="css/bootstrap.min.css" />
     <resource path="css/style.css" />
+    <resource path="css/github.css" />
     <resource path="css/animate.css" />
 
     <resource path="js/jquery.js" />
@@ -179,6 +180,8 @@
     <resource path="font/fontawesome-webfont.woff" />
     
     <resource path="icons/kivio-white.png" />
+    <resource path="icons/favicon.png" />
+    <resource path="icons/favicon.ico" />
     <resource path="images/teaser.png" />
     <resource path="images/theme-gaurav.png" />
     <resource path="images/sorry.png" />
