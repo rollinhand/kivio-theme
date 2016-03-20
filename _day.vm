@@ -33,15 +33,16 @@
 		        #if($model.permalink)
 		        	<!-- This is shown if a single entry is shown -->
 		        	#if($utils.isNotEmpty($entry.summary))
-		        		<p class="summary">$entry.summary</p>
+		        		<div class="summary">$entry.summary</div>
 		        	#end	
-		            <p class="content">$entry.displayContent</p>
+		            <div class="content">$entry.displayContent</div>
 		        #else
+		        	<!-- This is shown on the listing page -->
 		            #if($utils.isNotEmpty($entry.summary))
-		                <p>$entry.summary</p>
+		                <div class="content">$entry.summary</div>
                     #else
-                        <p>$entry.displayContent</p>
-                    #end
+                    	<div class="content">$entry.displayContent</div>
+                    #end	
 		        #end
 		    </div>
 		</div>
