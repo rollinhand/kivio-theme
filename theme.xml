@@ -165,6 +165,7 @@
     <resource path="css/style.css" />
     <resource path="css/github.css" />
     <resource path="css/animate.css" />
+    <resource path="css/roller-github-plugin.css" />
 
     <resource path="js/jquery.js" />
     <resource path="js/bootstrap.min.js" />
@@ -172,6 +173,7 @@
     <resource path="js/respond-1.1.0.min.js"/>
     <resource path="js/html5shiv.js"/>
     <resource path="js/html5element.js"/>
+    <resource path="js/highlight.pack.js"/>
 	
     <resource path="font/FontAwesome.otf" />	
     <resource path="font/fontawesome-webfont.eot" />

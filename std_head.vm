@@ -8,8 +8,13 @@
 <link href="$url.resource('css/bootstrap.min.css')" rel="stylesheet" type="text/css">
 <link href="$url.resource('css/style.css')" rel="stylesheet" type="text/css">
 <link href="$url.resource('css/github.css')" rel="stylesheet" type="text/css">
+<link href="$url.resource('css/roller-github-plugin.css')" rel="stylesheet" type="text/css">
 <link href="$url.resource('css/font-awesome.min.css')" rel="stylesheet" type="text/css"> 
 <link href="$url.resource('css/animate.css')" rel="stylesheet" type="text/css">
+
+<!-- Load Highlight.js -->
+<script src="$url.resource('js/highlight.pack.js')"></script>
+<script>hljs.initHighlightingOnLoad();</script>
  
 <!--[if lt IE 9]>
     <script src="$url.resource('js/respond-1.1.0.min.js')"></script>
