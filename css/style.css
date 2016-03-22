@@ -520,6 +520,7 @@ a.read_more:hover {
 
 .entryContent .summary {
 	font-weight:bold;
+	margin-bottom: 20px;
 }
 
 .entryInfo {
