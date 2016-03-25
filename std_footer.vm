@@ -1,35 +1,18 @@
 <div class="container">
     <div class="footer_bottom">
     	<div class="row">
-    		<div class="col-lg-10">
-				<p>Copyright &copy; 2015, Kivio Theme based on Unique Template by <a href="http://webthemez.com">WebThemez.com</a>.<p>
-				<p><i class="icon-rss subscribe"></i> <a href="$url.feed.entries.atom">Subscribe to this blog</a> &middot; <a href='$url.page("imprint")'>Imprint</a></p>
-			</div>
-			<div class="admin">
-				<!-- Logged in, show context menu -->
-				#if ($utils.isUserAuthorizedToAuthor($weblog))
-				<div class="btn-group dropup">
-					<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    				$utils.getAuthenticatedUser().userName &nbsp; <span class="caret"></span>
-  					</button>
-				  	<ul class="dropdown-menu">
-						<!-- Dropdown menu links -->
-						#if($utils.isUserAuthorizedToAdmin($weblog))
-							<li><a href="$url.createEntry">$text.get("navigationBar.newEntry")</a></li>
-							<li><a href="$url.editSettings">$text.get("navigationBar.settings")</a></li>
-						#end
-						#if ($utils.isUserAuthenticated())
-							<li class="divider"></li>
-							<li><a href="$url.logout">$text.get("navigationBar.logout")</a></li>
-						#else	
-							<li><a href="$url.logout">$text.get("navigationBar.login")</a></li>
-						#end   
-				  	</ul>
-				</div>
-				<!-- Not logged in, then show login button -->
-				#else
-					<a href="$url.login" class="btn btn-primary">$text.get("navigationBar.login")</a>
-				#end
+    		<div class="col-lg-12">
+				Copyright &copy; 2015, Kivio Theme based on Unique Template by <a href="http://webthemez.com">WebThemez.com</a>.
+				<ul class="footer-actions">
+					<li><i class="icon-rss subscribe"></i> <a href="$url.feed.entries.rss">RSS</a></li> 
+					<li><i class="icon-rss subscribe"></i> <a href="$url.feed.entries.atom">Atom</a></li>
+					<li><a href='$url.page("imprint")'>Imprint</a></li>
+					#if ($utils.isUserAuthenticated())
+					<li><a href="$url.logout">$text.get("navigationBar.logout")</a></li>
+					#else	
+					<li><a href="$url.logout">$text.get("navigationBar.login")</a></li>
+					#end
+				</ul>  
 			</div>	
     	</div>
     </div>

@@ -7,7 +7,11 @@
 			<a name="$utils.encode($entry.anchor)" id="$utils.encode($entry.anchor)"></a>
 
 		    #if(!$model.permalink)	<!-- Ansonsten wird der Titel in entry.vm angezeigt -->
-		    <h2 class="entryTitle"><a href="$entry.permalink">$entry.title</a></h2>
+				#if($utils.isNotEmpty($entry.summary))
+				<h2 class="entryTitle"><a href="$entry.permalink">$entry.title</a></h2>
+				#else
+				<h2 class="entryTitle quicktip icon-lightbulb"><a href="$entry.permalink">$entry.title</a></h2>
+				#end
 
 			<!-- Author, Date and Comments -->
 			<div class="entryInfo">
