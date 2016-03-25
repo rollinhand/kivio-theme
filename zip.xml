@@ -12,8 +12,7 @@
       	<include>**/*.vm</include>
       	<include>css/*.*</include>
       	<include>font/*.*</include>
-      	<include>icons/*.*</include>
-      	<include>images/*.*</include>
+      	<include>pics/*.*</include>
       	<include>js/*.*</include>
       	<include>theme.xml</include>
       </includes>
