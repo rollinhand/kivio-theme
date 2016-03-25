@@ -10,18 +10,6 @@
 
     <!-- theme preview image -->
     <preview-image path="images/theme-gaurav.png" />
-
-    <!-- stylesheet -->
-    <stylesheet>
-        <name>custom.css</name>
-        <description>Custom style sheet</description>
-	    <link>custom.css</link>
-        <contentType>text/html</contentType>
-        <rendition>
-            <contentsFile>custom_css.vm</contentsFile>
-            <templateLanguage>velocity</templateLanguage>
-        </rendition>
-    </stylesheet>
     
     <!-- templates -->
     <template action="weblog">
