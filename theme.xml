@@ -169,29 +169,12 @@
     <resource path="font/fontawesome-webfont.ttf" />
     <resource path="font/fontawesome-webfont.woff" />
     
-    <resource path="icons/kivio-white.png" />
-    <resource path="icons/favicon.png" />
-    <resource path="icons/favicon.ico" />
-    <resource path="images/teaser.png" />
-    <resource path="images/theme-gaurav.png" />
-    <resource path="images/sorry.png" />
-
-    <!-- <resource path="icons/asf-logo.png" />
-    <resource path="icons/comment.gif" />
-    <resource path="icons/delicious.gif" />
-    <resource path="icons/digman.gif" />
-    <resource path="icons/facebook-logo.png" />
-    <resource path="icons/feed-icon-14x14.png" />
-    <resource path="icons/feed-icon-28x28.png" />
-    <resource path="icons/flickr-icon.png" />
-    <resource path="icons/icon_clock.gif" />
-    <resource path="icons/linkedin-logo.jpg" />
-    <resource path="icons/page_white.png" />
-    <resource path="icons/page_white_acrobat.png" />
-    <resource path="icons/slashdot-13x13.png" />
-    <resource path="icons/tag_blue.png" />
-    <resource path="icons/technorati-16x15.png" />
-    <resource path="icons/twitter-icon.png" />-->
+    <resource path="pics/kivio-white.png" />
+    <resource path="pics/favicon.png" />
+    <resource path="pics/favicon.ico" />
+    <resource path="pics/teaser.png" />
+    <resource path="pics/theme-gaurav.png" />
+    <resource path="pics/sorry.png" />
 
 </weblogtheme>
 
