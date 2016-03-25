@@ -10,7 +10,7 @@
 					#if ($utils.isUserAuthenticated())
 					<li><a href="$url.logout">$text.get("navigationBar.logout")</a></li>
 					#else	
-					<li><a href="$url.logout">$text.get("navigationBar.login")</a></li>
+					<li><a href="$url.login">$text.get("navigationBar.login")</a></li>
 					#end
 				</ul>  
 			</div>	
