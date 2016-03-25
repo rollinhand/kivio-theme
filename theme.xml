@@ -9,7 +9,7 @@
     <author>Björn Berg</author>
 
     <!-- theme preview image -->
-    <preview-image path="images/theme-gaurav.png" />
+    <preview-image path="pics/theme-kivio.png" />
     
     <!-- templates -->
     <template action="weblog">
@@ -173,7 +173,7 @@
     <resource path="pics/favicon.png" />
     <resource path="pics/favicon.ico" />
     <resource path="pics/teaser.png" />
-    <resource path="pics/theme-gaurav.png" />
+    <resource path="pics/theme-kivio.png" />
     <resource path="pics/sorry.png" />
 
 </weblogtheme>
